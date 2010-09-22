@@ -1,4 +1,7 @@
-hello/.gradle/
-hello/build/
-hello/hello.*
+*/.gradle/
+*/build/
 
+# exclude ide generated files
+*.iml
+*.ipr
+*.iws
