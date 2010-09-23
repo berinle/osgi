@@ -1,8 +1,11 @@
 */.gradle/
 */build/
+*/target/
+*/runner/
 
 # exclude ide generated files
 *.iml
 *.ipr
 *.iws
 .gradle/
+

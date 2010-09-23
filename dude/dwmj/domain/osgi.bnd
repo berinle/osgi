@@ -1,0 +1,6 @@
+#-----------------------------------------------------------------
+# Use this file to add customized Bnd instructions for the bundle
+#-----------------------------------------------------------------
+
+Embed-Dependency: compass;groupId=org.compass-project;inline=false
+Import-Package: *;resolution:=optional

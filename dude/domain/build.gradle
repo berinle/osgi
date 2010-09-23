@@ -1,0 +1,54 @@
+group = 'com.dudewheresmyjar'
+version = '1.0.0'
+
+apply plugin: 'java'
+apply plugin: 'osgi'
+apply plugin: 'idea'
+
+sourceCompatability = 1.6
+
+repositories {
+	mavenCentral()
+	//mavenRepos urls: "http://repo.compass-project.org"
+	mavenCentral name: 'compass', urls: '"http://repo.compass-project.org'
+}
+
+dependencies{
+	compile 'org.osgi:osgi_R4_core:1.0'
+	compile 'org.compass-project:compass:2.1.1'
+	//compile 'org.eclipse:osgi:3.5.1-R35x_v20090827'
+	//compile 'org.eclipse:osgi:3.5.0.v20090520'
+}
+
+task init (description: 'create initial project structure') << {
+	sourceSets.all*.java.srcDirs*.each { it.mkdirs() }
+	sourceSets.all*.resources.srcDirs*.each { it.mkdirs() }
+}
+	
+configure(jar.osgi){
+	//generated manifest
+	version = '1.0.0'
+	symbolicName = 'com.dudewheresmyjar'
+}
+
+/*subprojects {
+	apply plugin: 'java'
+	apply plugin: 'idea'
+	apply plugin: 'eclipse'
+	
+	sourceCompatability = 1.6
+	version = 1.0
+
+	repositories {
+		mavenCentral()
+	}
+	
+	dependencies {
+		compile 'org.osgi:osgi_R4_core:1.0'
+	}
+	
+	task init (description: 'create initial project structure') << {
+		sourceSets.all*.java.srcDirs*.each { it.mkdirs() }
+		sourceSets.all*.resources.srcDirs*.each { it.mkdirs() }
+	}
+}*/
